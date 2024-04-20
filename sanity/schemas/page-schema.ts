@@ -18,10 +18,10 @@ const page = {
             }
         },
         {
-            name: 'content',
-            title: 'Content',
-            type: 'array',
-            of: [{type: 'block'}],
+            name: "content",
+            title: "Content",
+            type: "array",
+            of: [{ type: "block" }]
         },
     ],
 };

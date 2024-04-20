@@ -47,7 +47,8 @@ export async function getProject(slug: string): Promise<Project>{
             content
 
         }`,
-        { slug }
+        { slug },
+        { cache: 'no-store' }
     )
 }
 
@@ -80,7 +81,8 @@ export async function getPage(slug: string): Promise<Page>{
 
             content
         }`,
-        { slug }
+        { slug },
+        { cache: 'no-store' }
     )
 }
 

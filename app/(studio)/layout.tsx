@@ -21,9 +21,9 @@ export default function RootLayout({
         <header>
           <Link 
             href="/"
-            className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent px-7"
+            className="bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent px-7"
           >
-            Navigation</Link>
+            Back to Main App</Link>
         </header>
         <main>{children}</main>
       </body>
