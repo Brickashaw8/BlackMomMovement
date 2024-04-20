@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import Link from "next/link";
 import { getPages } from "@/sanity/sanity-utils";
+import Image from 'next/image';
+import logo from '../images/bmm_logo.jpeg'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +28,12 @@ export default async function RootLayout({
             href="/"
             className="flex justify-start bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent p-5"
           >
-            Home Navigation
+            <Image
+              src={logo}
+              alt="site logo"
+              width={100}
+              height={100}
+            />
           </Link>
 
             <div className="flex justify-end gap-5 text-sm text-gray-600 p-5">
