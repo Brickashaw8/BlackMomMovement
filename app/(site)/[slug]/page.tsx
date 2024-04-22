@@ -14,10 +14,20 @@ export default async function Page({params}: Props) {
                 {page.title}
             </h1>
         
+        
+            
 
-        <div className="text-lg text-gray-700 mt-10">
-            <PortableText value={page.content}/>
+        {page.title === 'Survey'?(
+            <div className="flex justify-center">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScWxcqkr9mErakw1eXU4TbHYHskqs6fiY1tXH-KRt3-neMtyA/viewform?embedded=true" width="1200" height="1200" ></iframe>
             </div>
+        ):(
+            <div className="text-lg text-gray-700 mt-10">
+                <PortableText value={page.content}/>
+                </div>
+        )}
         </div>
+        
+        
     )
 }

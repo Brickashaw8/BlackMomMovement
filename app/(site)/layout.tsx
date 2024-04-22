@@ -5,8 +5,10 @@ import Link from "next/link";
 import { getPages } from "@/sanity/sanity-utils";
 import Image from 'next/image';
 import logo from '../images/bmm_logo.jpeg'
+import fullhouse from '../images/full_house.jpeg'
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: "The Black Moms Movement",
@@ -19,6 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   //get all pages
+  // const [open, setOpen] = useState(false);
   const pages = await getPages()
   return (
     <html lang="en">
@@ -26,7 +29,7 @@ export default async function RootLayout({
         <header className="flex justify-between">
           <Link 
             href="/"
-            className="flex justify-start bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent p-5"
+            className="flex justify-start bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent p-5 hover:scale-105 transition"
           >
             <Image
               src={logo}
@@ -38,14 +41,25 @@ export default async function RootLayout({
 
             <div className="flex justify-end gap-5 text-sm text-gray-600 p-5">
               {pages.map((page)=>(
-                <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
+                <Link key={page._id} href={`/${page.slug}`} className="hover:scale-105 transition">
                   {page.title}
                 </Link>
               ))}
 
             </div>
         </header>
+        
+        
         <main>{children}</main>
+        <div className="flex justify-center mt-20">
+          <Image
+                src={fullhouse}
+                alt="happy family"
+                width={800}
+                height={800}
+                className="flex justify-center object-cover rounded-xl border-2 border-gray-700"
+              />
+            </div>
       </body>
     </html>
   );

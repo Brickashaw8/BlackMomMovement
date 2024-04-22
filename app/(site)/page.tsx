@@ -2,6 +2,7 @@ import { getProjects } from "@/sanity/sanity-utils";
 import { log } from "console";
 import Image from 'next/image'
 import Link from "next/link";
+import MainContent from "./main-content"
 
 export default async function Home() {
   const projects = await getProjects()
@@ -11,8 +12,8 @@ export default async function Home() {
         <h2 className="flex justify-center font-extrabold mt-5 bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent text-7xl px-5">Black Moms Movement</h2>
         
         {/* main article grid */}
-        <p className="flex justify-center font-extrabold px-5">All Moms are Super Heroes</p>
-        
+        <p className="flex justify-center font-extrabold px-5">All Moms are Super Heroes, Black Moms especially</p>
+        <MainContent/>
         
         <h2 className="flex justify-center mt-10 font-extrabold bg-gradient-to-r from-green-400 via-yellow-500 to-red-600 bg-clip-text text-transparent text-3xl px-5">Information Playbooks</h2>
         <p className="flex justify-center font-extrabold ">
